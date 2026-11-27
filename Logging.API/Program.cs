@@ -46,4 +46,13 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.Logger.LogInformation("Logging Applicatoin Started");
+app.Logger.LogWarning("Please check your name one more time seems that not good");
+app.Logger.LogError("Your input is givning the issue . thats why we are getting error");
+
 app.Run();
+
+
+//sucessfull message
+//warning message
+//error messags
