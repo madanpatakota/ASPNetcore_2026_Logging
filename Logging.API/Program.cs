@@ -9,8 +9,21 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 
 
+/////////
+
+
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
+
+// regsiter swagger api reslated services
+builder.Services.AddEndpointsApiExplorer();
+
+//add register the swagger service
+builder.Services.AddSwaggerGen();
+
+
+
+// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapin
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
@@ -20,6 +33,12 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+
+//JosnDocumentation of the apis 
+app.UseSwagger();
+
+//enagble UI
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
