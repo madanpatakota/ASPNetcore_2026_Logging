@@ -10,6 +10,8 @@ builder.Services.AddScoped<IUserService, UserService>();
 
 
 /////////
+//ocnfigure the azue app service logging provider.
+builder.Logging.AddAzureWebAppDiagnostics();
 
 
 builder.Services.AddControllers();
